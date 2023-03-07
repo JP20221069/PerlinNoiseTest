@@ -31,7 +31,7 @@ namespace PerlinNoiseTest
         public static Color colorize(float f)
         {
             Color ret = Color.Black;
-            float c = 255 * (f + 1) / 2;
+            float c = 255*f;
             if (c > 255) c = 255;
             if (c < 0) c = 0;
             ret = Color.FromArgb(255, (int)c, (int)c, (int)c);

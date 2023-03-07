@@ -6,3 +6,4 @@ c:\users\peca.laptop-3keagrin\documents\visual studio 2010\Projects\PerlinNoiseT
 c:\users\peca.laptop-3keagrin\documents\visual studio 2010\Projects\PerlinNoiseTest\PerlinNoiseTest\obj\x86\Debug\PerlinNoiseTest.exe
 c:\users\peca.laptop-3keagrin\documents\visual studio 2010\Projects\PerlinNoiseTest\PerlinNoiseTest\obj\x86\Debug\PerlinNoiseTest.pdb
 C:\Users\PECA.LAPTOP-3KEAGRIN\documents\visual studio 2010\Projects\PerlinNoiseTest\PerlinNoiseTest\obj\x86\Debug\PerlinNoiseTest.csprojResolveAssemblyReference.cache
+C:\Users\PECA.LAPTOP-3KEAGRIN\documents\visual studio 2010\Projects\PerlinNoiseTest\PerlinNoiseTest\obj\x86\Debug\PerlinNoiseTest.Form2.resources

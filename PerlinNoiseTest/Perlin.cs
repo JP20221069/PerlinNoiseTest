@@ -31,9 +31,9 @@ namespace PerlinNoiseTest
                         int sampley2 = (sampley1 + pitch) % width;
 
                         float blend_x = (float)(x - samplex1) / (float)pitch;
-                        float blend_y = (float)(y - sampley2) / (float)pitch;
+                        float blend_y = (float)(y - sampley1) / (float)pitch;
                         float sample_t = (1.0f - blend_x) * seed[sampley1 * width + samplex1] + blend_x * seed[sampley1 * width + samplex2];
-                        float sample_b = (1.0f - blend_x) * seed[samplex2 * width + samplex1] + blend_x * seed[sampley2 * width + samplex2];
+                        float sample_b = (1.0f - blend_x) * seed[sampley2 * width + samplex1] + blend_x * seed[sampley2 * width + samplex2];
                         scale_accumulator += scale;
                         noise += (blend_y * (sample_b - sample_t) + sample_t) * scale;
                         scale = scale / bias;
