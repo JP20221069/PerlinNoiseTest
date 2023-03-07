@@ -81,6 +81,7 @@ namespace PerlinNoiseTest
         {
             FIELD_BIAS.DecimalPlaces = 2;
             PICTURE_STATUS.Image = imageList1.Images["PIC_QUESTION.png"];
+            saveFileDialog1.Filter="Bitmap files|*.bmp|All files|*.*"; 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,26 +104,12 @@ namespace PerlinNoiseTest
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Random r = new Random();
-            string filename = "test" + r.Next(100) + ".png";
-            try
+            if (pictureBox1.Image != null)
             {
-                bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
-                MessageBox.Show("File successfully saved as " + filename + ".", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
+                Random r = new Random();
+                string filename = "test" + r.Next(100) + ".png";
                 try
                 {
-                    string filename = saveFileDialog1.FileName;
                     bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
                     MessageBox.Show("File successfully saved as " + filename + ".", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -130,6 +117,34 @@ namespace PerlinNoiseTest
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("No image to save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        string filename = saveFileDialog1.FileName;
+                        bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
+                        MessageBox.Show("File successfully saved as " + filename + ".", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No image to save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

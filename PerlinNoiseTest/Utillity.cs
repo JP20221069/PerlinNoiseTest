@@ -34,6 +34,10 @@ namespace PerlinNoiseTest
             float c = 255*f;
             if (c > 255) c = 255;
             if (c < 0) c = 0;
+            if (float.IsNaN(c))
+            {
+                c = 0;
+            }
             ret = Color.FromArgb(255, (int)c, (int)c, (int)c);
             return ret;
         }
